@@ -1,0 +1,6 @@
+vi_perl.c
+vi_perl.h
+*.o
+*.i
+prog
+
