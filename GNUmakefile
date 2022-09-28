@@ -2,17 +2,9 @@ MAKEOPTS:=-rR
 
 all:
 
-ifeq ($(MAKECMDGOALS),)
-
-#EMPTY:=$(warning empty)
-
-else
-
-#EMPTY:=$(warning not empty)
-
+ifneq ($(MAKECMDGOALS),)
 $(MAKECMDGOALS): all
-	echo done
-
+	@echo made $(MAKECMDGOALS)
 endif
 
 all: Makefile

@@ -8,8 +8,8 @@ CFLAGS:=$(CXXFLAGS)
 LDFLAGS:=$(shell perl -MExtUtils::Embed -e ldopts )
 CPPFLAGS:=$(shell perl -MExtUtils::Embed -e perl_inc)
 
-$(warning LDFLAGS:=$(LDFLAGS))
-$(warning CPPFLAGS:=$(CPPFLAGS))
+#$(warning LDFLAGS:=$(LDFLAGS))
+#$(warning CPPFLAGS:=$(CPPFLAGS))
 
 prog: vi_perl.o
 
@@ -22,8 +22,8 @@ prog:%:%.o
 %.i: %.c
 	gcc -E -o $@ $< $(CPPFLAGS)
 
-vi_perl.c: vi_perl.pl store_text.pl
-	vi_perl store_text.pl vi_perl.c vi_perl.pl
+vi_perl.c vi_perl.h: vi_perl.pl store_text.pl
+	vi_perl store_text.pl vi_perl.c vi_perl.h vi_perl vi_perl.pl
 
 xsinit.c: xsinit.gen
 	bash xsinit.gen
