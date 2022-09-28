@@ -4,3 +4,4 @@ vi_perl.h
 *.i
 prog
 
+Makefile.embed
