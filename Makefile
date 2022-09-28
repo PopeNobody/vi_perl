@@ -28,5 +28,5 @@ vi_perl.c vi_perl.h: vi_perl.pl store_text.pl
 xsinit.c: xsinit.gen
 	bash xsinit.gen
 	
-.PRECIOUS: prog prog.oo prog.ii prog.cc xinit.c xinit.o
+.PRECIOUS: prog prog.o prog.i prog.c xinit.c xinit.o
 
